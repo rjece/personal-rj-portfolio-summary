@@ -5,161 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RJ — Electronics Engineer</title>
 <style>
-/* ── RESET & BASE ─────────────────────────────────────── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 :root{
-  --bg:#07090f;
-  --bg2:#0c0f1a;
-  --surface:#111726;
-  --surface2:#181f32;
-  --b0:rgba(255,255,255,0.04);
-  --b1:rgba(255,255,255,0.08);
-  --b2:rgba(255,255,255,0.14);
-  --t1:#eef1f8;
-  --t2:#8a96b0;
-  --t3:#434e68;
-  --accent:#4f8ef7;
-  --embedded:#34d399;
-  --automation:#fb923c;
-  --web:#818cf8;
-  --cyber:#f472b6;
-  --others:#facc15;
-  --private:#f87171;
+  --bg:#07090f;--bg2:#0c0f1a;--surface:#111726;--surface2:#181f32;
+  --b0:rgba(255,255,255,0.04);--b1:rgba(255,255,255,0.08);--b2:rgba(255,255,255,0.14);
+  --t1:#eef1f8;--t2:#8a96b0;--t3:#434e68;
+  --accent:#4f8ef7;--embedded:#34d399;--automation:#fb923c;--web:#818cf8;--cyber:#f472b6;--others:#facc15;--private:#f87171;
 }
-
-body{
-  background:var(--bg);
-  color:var(--t2);
-  font-family:'SF Mono','Fira Code','Cascadia Code',Consolas,monospace;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-
-/* atmospheric bg */
-body::before{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 70% 50% at 5% 10%,rgba(79,142,247,0.07),transparent 55%),
-    radial-gradient(ellipse 50% 40% at 95% 90%,rgba(244,114,182,0.05),transparent 50%);
-}
-body::after{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);
-  background-size:48px 48px;
-}
-
+body{background:var(--bg);color:var(--t2);font-family:'SF Mono','Fira Code','Cascadia Code',Consolas,monospace;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 70% 50% at 5% 10%,rgba(79,142,247,0.07),transparent 55%),radial-gradient(ellipse 50% 40% at 95% 90%,rgba(244,114,182,0.05),transparent 50%);}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:48px 48px;}
 .wrap{max-width:1000px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
-
-/* ── NAV ──────────────────────────────────────────────── */
-nav{
-  position:sticky;top:0;z-index:100;
-  height:56px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 28px;
-  background:rgba(7,9,15,0.88);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--b1);
-}
-.nav-logo{
-  font-family:system-ui,sans-serif;
-  font-size:17px;font-weight:800;
-  color:var(--t1);letter-spacing:-0.02em;
-  text-decoration:none;
-}
+nav{position:sticky;top:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(7,9,15,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--b1);}
+.nav-logo{font-family:system-ui,sans-serif;font-size:17px;font-weight:800;color:var(--t1);letter-spacing:-0.02em;text-decoration:none;}
 .nav-logo span{color:var(--accent)}
 .nav-links{display:flex;gap:4px}
-.nav-links a{
-  font-size:12px;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--t3);text-decoration:none;
-  padding:6px 14px;border-radius:4px;
-  transition:color 0.2s,background 0.2s;
-}
+.nav-links a{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--t3);text-decoration:none;padding:6px 14px;border-radius:4px;transition:color 0.2s,background 0.2s;}
 .nav-links a:hover{color:var(--t2);background:var(--b0)}
-
-/* ── HERO ─────────────────────────────────────────────── */
-.hero{
-  padding:96px 0 72px;
-  display:flex;flex-direction:column;gap:20px;
-}
-.hero-tag{
-  font-size:12px;letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--accent);display:flex;align-items:center;gap:10px;
-}
+.hero{padding:96px 0 72px;display:flex;flex-direction:column;gap:20px;}
+.hero-tag{font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px;}
 .hero-tag::before{content:'';width:20px;height:1px;background:var(--accent);opacity:0.6}
-
-.hero-name{
-  font-family:system-ui,-apple-system,sans-serif;
-  font-size:clamp(40px,7vw,80px);
-  font-weight:900;color:var(--t1);
-  line-height:0.95;letter-spacing:-0.04em;
-}
-.hero-name span{
-  display:block;
-  background:linear-gradient(125deg,var(--accent) 0%,#a78bfa 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-
-.hero-title{
-  font-family:system-ui,sans-serif;
-  font-size:19px;color:var(--t2);font-weight:400;
-}
+.hero-name{font-family:system-ui,-apple-system,sans-serif;font-size:clamp(40px,7vw,80px);font-weight:900;color:var(--t1);line-height:0.95;letter-spacing:-0.04em;}
+.hero-name span{display:block;background:linear-gradient(125deg,var(--accent) 0%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-title{font-family:system-ui,sans-serif;font-size:19px;color:var(--t2);font-weight:400;}
 .hero-title strong{color:var(--t1);font-weight:600}
-
-.hero-bio{
-  font-size:16px;color:var(--t3);
-  line-height:1.8;max-width:520px;
-  font-family:system-ui,sans-serif;
-}
-
-.hero-cta{
-  display:flex;gap:12px;flex-wrap:wrap;
-  margin-top:8px;
-}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
-  padding:12px 22px;border-radius:4px;
-  text-decoration:none;font-family:inherit;
-  transition:all 0.2s;cursor:pointer;border:none;
-}
+.hero-bio{font-size:16px;color:var(--t3);line-height:1.8;max-width:520px;font-family:system-ui,sans-serif;}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;padding:12px 22px;border-radius:4px;text-decoration:none;font-family:inherit;transition:all 0.2s;cursor:pointer;border:none;}
 .btn-primary{background:var(--accent);color:#000;font-weight:700}
 .btn-primary:hover{background:#6ba3ff}
 .btn-ghost{background:var(--surface);border:1px solid var(--b2);color:var(--t2)}
 .btn-ghost:hover{border-color:var(--accent);color:var(--t1)}
-
-/* ── SECTION LABEL ────────────────────────────────────── */
-.section-label{
-  font-size:11px;letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--t3);margin:64px 0 28px;
-  display:flex;align-items:center;gap:16px;
-}
+.section-label{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--t3);margin:64px 0 28px;display:flex;align-items:center;gap:16px;}
 .section-label::after{content:'';flex:1;height:1px;background:var(--b1)}
-
-/* ── SKILLS ───────────────────────────────────────────── */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-  gap:2px;margin-bottom:16px;
-}
-.skill-group{
-  background:var(--surface);border:1px solid var(--b1);padding:22px 24px;
-  position:relative;overflow:hidden;
-}
-.skill-group::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:var(--sk-color,var(--accent));opacity:0.7;
-}
-.skill-group-label{
-  font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--sk-color,var(--accent));margin-bottom:16px;font-weight:600;
-}
-.skill-row{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:8px 0;border-bottom:1px solid var(--b0);gap:10px;
-}
+.sub-label{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--t3);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.sub-label-line{flex:1;height:1px;background:var(--b1);display:block;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;margin-bottom:16px;}
+.skill-group{background:var(--surface);border:1px solid var(--b1);padding:22px 24px;position:relative;overflow:hidden;}
+.skill-group::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--sk-color,var(--accent));opacity:0.7;}
+.skill-group-label{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sk-color,var(--accent));margin-bottom:16px;font-weight:600;}
+.skill-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--b0);gap:10px;}
 .skill-row:last-child{border-bottom:none;padding-bottom:0}
 .skill-name{font-size:14px;color:var(--t2);font-family:system-ui,sans-serif;flex:1}
 .skill-dots{display:flex;gap:5px;align-items:center;flex-shrink:0;position:relative;cursor:default}
@@ -174,196 +60,65 @@ nav{
 .skill-dots[data-level="3"]{--dot-color:#06b6d4}
 .skill-dots[data-level="4"]{--dot-color:#4f8ef7}
 .skill-dots[data-level="5"]{--dot-color:#34d399}
-.skill-dots::after{
-  content:attr(data-label);
-  position:absolute;right:0;bottom:calc(100% + 7px);
-  background:var(--surface2);border:1px solid var(--b2);
-  color:var(--t1);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
-  padding:5px 10px;border-radius:3px;white-space:nowrap;
-  opacity:0;pointer-events:none;transition:opacity 0.15s;
-  font-family:'SF Mono',Consolas,monospace;z-index:10;
-}
+.skill-dots::after{content:attr(data-label);position:absolute;right:0;bottom:calc(100% + 7px);background:var(--surface2);border:1px solid var(--b2);color:var(--t1);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:5px 10px;border-radius:3px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.15s;font-family:'SF Mono',Consolas,monospace;z-index:10;}
 .skill-dots:hover::after{opacity:1}
-.skills-legend{
-  display:flex;gap:24px;flex-wrap:wrap;
-  padding:14px 22px;background:var(--surface);border:1px solid var(--b1);margin-bottom:2px;
-}
+.skills-legend{display:flex;gap:24px;flex-wrap:wrap;padding:14px 22px;background:var(--surface);border:1px solid var(--b1);margin-bottom:2px;}
 .legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t3);font-family:system-ui,sans-serif}
 .legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-
-/* ── FILTER TABS ──────────────────────────────────────── */
 .filter-bar{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:28px}
-.filter-btn{
-  font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
-  padding:9px 18px;border:1px solid var(--b1);
-  background:var(--surface);color:var(--t3);
-  cursor:pointer;border-radius:3px;font-family:inherit;
-  transition:all 0.15s;
-}
+.filter-btn{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;padding:9px 18px;border:1px solid var(--b1);background:var(--surface);color:var(--t3);cursor:pointer;border-radius:3px;font-family:inherit;transition:all 0.15s;}
 .filter-btn:hover{color:var(--t2);border-color:var(--b2)}
-.filter-btn.active{
-  background:var(--fc,var(--accent));
-  border-color:var(--fc,var(--accent));
-  color:#000;font-weight:700;
-}
-
-/* ── PROJECT GRID ─────────────────────────────────────── */
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:2px;
-}
-
-.project-card{
-  background:var(--surface);border:1px solid var(--b1);
-  padding:24px;display:flex;flex-direction:column;gap:12px;
-  position:relative;overflow:hidden;
-  transition:background 0.2s,border-color 0.2s;
-}
-.project-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:var(--pc,var(--accent));
-}
+.filter-btn.active{background:var(--fc,var(--accent));border-color:var(--fc,var(--accent));color:#000;font-weight:700;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;}
+.teaching-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;margin-bottom:32px;}
+.project-card{background:var(--surface);border:1px solid var(--b1);padding:24px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:background 0.2s,border-color 0.2s;}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pc,var(--accent));}
 .project-card:hover{background:var(--surface2);border-color:var(--b2)}
 .project-card.hidden{display:none}
-
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.card-cat{
-  font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--pc,var(--accent));
-}
+.card-cat{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pc,var(--accent));}
 .card-badges{display:flex;gap:6px;flex-wrap:wrap}
-
-.badge{
-  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
-  padding:3px 8px;border-radius:2px;font-weight:600;
-}
+.badge{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;border-radius:2px;font-weight:600;}
 .badge-private{background:rgba(248,113,113,0.12);color:var(--private);border:1px solid rgba(248,113,113,0.2)}
 .badge-public{background:rgba(52,211,153,0.12);color:var(--embedded);border:1px solid rgba(52,211,153,0.2)}
 .badge-wip{background:rgba(250,204,21,0.12);color:var(--others);border:1px solid rgba(250,204,21,0.2)}
-
-.card-title{
-  font-family:system-ui,sans-serif;
-  font-size:19px;font-weight:700;color:var(--t1);
-  line-height:1.2;letter-spacing:-0.01em;
-}
-.card-desc{
-  font-size:14px;color:var(--t3);
-  line-height:1.7;font-family:system-ui,sans-serif;
-  flex:1;
-}
-
+.card-title{font-family:system-ui,sans-serif;font-size:19px;font-weight:700;color:var(--t1);line-height:1.2;letter-spacing:-0.01em;}
+.card-desc{font-size:14px;color:var(--t3);line-height:1.7;font-family:system-ui,sans-serif;flex:1;}
 .card-skills{display:flex;flex-wrap:wrap;gap:5px}
-.skill-tag{
-  font-size:11px;letter-spacing:0.08em;
-  padding:4px 10px;
-  background:var(--bg2);border:1px solid var(--b0);
-  color:var(--t3);border-radius:2px;
-}
-
-.card-privacy{
-  font-size:12px;color:var(--private);
-  display:flex;align-items:center;gap:6px;
-  font-family:system-ui,sans-serif;
-  opacity:0.8;
-}
+.skill-tag{font-size:11px;letter-spacing:0.08em;padding:4px 10px;background:var(--bg2);border:1px solid var(--b0);color:var(--t3);border-radius:2px;}
+.card-privacy{font-size:12px;color:var(--private);display:flex;align-items:center;gap:6px;font-family:system-ui,sans-serif;opacity:0.8;}
 .card-privacy::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--private);flex-shrink:0}
-
-.card-footer{
-  display:flex;align-items:center;justify-content:space-between;
-  padding-top:12px;border-top:1px solid var(--b0);
-  margin-top:auto;
-}
-.card-status{
-  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--t3);
-}
-.card-link{
-  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--accent);text-decoration:none;
-  transition:color 0.15s;
-}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--b0);margin-top:auto;}
+.card-status{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--t3);}
+.card-link{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:color 0.15s;}
 .card-link:hover{color:#6ba3ff}
 .card-link.confidential{color:var(--t3);cursor:default}
-
-/* ── ABOUT ────────────────────────────────────────────── */
-.about-block{
-  background:var(--surface);border:1px solid var(--b1);
-  border-left:2px solid var(--accent);
-  padding:32px 36px;margin-bottom:2px;
-}
-.about-block h3{
-  font-family:system-ui,sans-serif;
-  font-size:24px;font-weight:800;color:var(--t1);
-  margin-bottom:14px;letter-spacing:-0.02em;
-}
-.about-block p{
-  font-size:16px;color:var(--t3);
-  line-height:1.9;font-family:system-ui,sans-serif;
-  max-width:600px;
-}
+a.card-wrap{text-decoration:none;display:block;}
+a.card-wrap .card-link{color:var(--accent)}
+a.card-wrap:hover .project-card{background:var(--surface2);border-color:var(--b2)}
+.about-block{background:var(--surface);border:1px solid var(--b1);border-left:2px solid var(--accent);padding:32px 36px;margin-bottom:2px;}
+.about-block h3{font-family:system-ui,sans-serif;font-size:24px;font-weight:800;color:var(--t1);margin-bottom:14px;letter-spacing:-0.02em;}
+.about-block p{font-size:16px;color:var(--t3);line-height:1.9;font-family:system-ui,sans-serif;max-width:600px;}
 .about-block p+p{margin-top:12px}
 .about-block strong{color:var(--t2);font-weight:500}
-
-/* ── CONTACT ──────────────────────────────────────────── */
-.contact-strip{
-  background:var(--surface);border:1px solid var(--b1);
-  padding:28px 32px;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:20px;
-  margin-bottom:64px;
-}
-.contact-left h3{
-  font-family:system-ui,sans-serif;
-  font-size:22px;font-weight:800;color:var(--t1);
-  margin-bottom:6px;letter-spacing:-0.02em;
-}
+.contact-strip{background:var(--surface);border:1px solid var(--b1);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:64px;}
+.contact-left h3{font-family:system-ui,sans-serif;font-size:22px;font-weight:800;color:var(--t1);margin-bottom:6px;letter-spacing:-0.02em;}
 .contact-left p{font-size:15px;color:var(--t3);font-family:system-ui,sans-serif}
 .contact-links{display:flex;gap:8px;flex-wrap:wrap}
-.contact-link{
-  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
-  padding:10px 18px;border:1px solid var(--b2);
-  background:var(--bg2);color:var(--t2);
-  text-decoration:none;border-radius:3px;
-  transition:all 0.15s;
-}
+.contact-link{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;padding:10px 18px;border:1px solid var(--b2);background:var(--bg2);color:var(--t2);text-decoration:none;border-radius:3px;transition:all 0.15s;}
 .contact-link:hover{border-color:var(--accent);color:var(--accent)}
-
-/* ── FOOTER ───────────────────────────────────────────── */
-footer{
-  border-top:1px solid var(--b0);
-  padding:24px 0;
-  display:flex;justify-content:space-between;
-  align-items:center;flex-wrap:wrap;gap:12px;
-}
+footer{border-top:1px solid var(--b0);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 footer span{font-size:12px;color:var(--t3);letter-spacing:0.1em}
-
-/* ── RESPONSIVE ───────────────────────────────────────── */
-/* TOP SKILLS STRIP */
-.top-skills{
-  display:flex;align-items:flex-start;gap:16px;
-  padding:20px 0 0;border-top:1px solid var(--b1);
-  margin-top:10px;flex-wrap:wrap;
-}
-.top-skills-label{
-  font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--t3);flex-shrink:0;padding-top:6px;white-space:nowrap;
-}
+.top-skills{display:flex;align-items:flex-start;gap:16px;padding:20px 0 0;border-top:1px solid var(--b1);margin-top:10px;flex-wrap:wrap;}
+.top-skills-label{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--t3);flex-shrink:0;padding-top:6px;white-space:nowrap;}
 .top-skills-pills{display:flex;flex-wrap:wrap;gap:8px}
-.top-skill{
-  font-size:13px;padding:5px 14px;
-  background:var(--surface);border:1px solid var(--b2);
-  color:var(--t2);border-radius:3px;
-  font-family:system-ui,sans-serif;letter-spacing:0.02em;
-  transition:border-color 0.2s,color 0.2s;
-}
+.top-skill{font-size:13px;padding:5px 14px;background:var(--surface);border:1px solid var(--b2);color:var(--t2);border-radius:3px;font-family:system-ui,sans-serif;letter-spacing:0.02em;transition:border-color 0.2s,color 0.2s;}
 .top-skill:hover{border-color:var(--accent);color:var(--t1)}
-
 @media(max-width:640px){
   .nav-links a{padding:6px 8px;font-size:11px;letter-spacing:0.06em}
   .hero{padding:64px 0 48px}
   .skills-grid{grid-template-columns:1fr 1fr}
-  .projects-grid{grid-template-columns:1fr}
+  .projects-grid,.teaching-grid{grid-template-columns:1fr}
   .contact-strip{flex-direction:column}
   .top-skills{flex-direction:column;gap:10px}
 }
@@ -371,44 +126,28 @@ footer span{font-size:12px;color:var(--t3);letter-spacing:0.1em}
 </head>
 <body>
 
-<!-- ── NAV ─────────────────────────────────────────────── -->
 <nav>
   <a href="#" class="nav-logo">RJ<span>.</span></a>
   <div class="nav-links">
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#teaching">Teaching</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- ── HERO ────────────────────────────────────────────── -->
 <div class="wrap">
   <section class="hero">
     <div class="hero-tag">Portfolio · rjece.github.io</div>
-    <h1 class="hero-name">
-      RJ<br>
-      <span>Ece.</span>
-    </h1>
-    <!-- UPDATE: Replace with your full name above and below -->
-    <p class="hero-title">
-      <strong>Electronics Engineer</strong> &mdash;
-      Embedded systems, IoT, automation &amp; network security
-    </p>
-    <p class="hero-bio">
-      <!-- UPDATE: Edit this to match your voice -->
-      I design and build systems at the intersection of hardware and software &mdash;
-      from low-level embedded firmware and PCB design to cloud-connected automation pipelines.
-      Based in Davao, Philippines. Available for remote work.
-    </p>
+    <h1 class="hero-name">RJ<br><span>Ece.</span></h1>
+    <p class="hero-title"><strong>Electronics Engineer</strong> &mdash; Embedded systems, IoT, automation &amp; network security</p>
+    <p class="hero-bio">I design and build systems at the intersection of hardware and software &mdash; from low-level embedded firmware and PCB design to cloud-connected automation pipelines. Based in Davao, Philippines. Available for remote work.</p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View projects</a>
       <a href="#contact" class="btn btn-ghost">Get in touch</a>
       <a href="https://github.com/rjece" target="_blank" class="btn btn-ghost">GitHub</a>
     </div>
-
-    <!-- TOP SKILLS STRIP — auto-shows level 4-5 only -->
-    <!-- UPDATE: Add/remove .top-skill spans here as your proficiency grows -->
     <div class="top-skills">
       <span class="top-skills-label">Core skills</span>
       <div class="top-skills-pills">
@@ -421,12 +160,10 @@ footer span{font-size:12px;color:var(--t3);letter-spacing:0.1em}
         <span class="top-skill">Firmware development</span>
       </div>
     </div>
-
   </section>
 
-  <!-- ── SKILLS ───────────────────────────────────────── -->
+  <!-- SKILLS -->
   <div class="section-label" id="skills">Stack &amp; skills</div>
-  <!-- PROFICIENCY LEGEND -->
   <div class="skills-legend">
     <div class="legend-item"><div class="legend-dot" style="background:#e879f9"></div>Beginner</div>
     <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>Learning</div>
@@ -434,160 +171,54 @@ footer span{font-size:12px;color:var(--t3);letter-spacing:0.1em}
     <div class="legend-item"><div class="legend-dot" style="background:#4f8ef7"></div>Active use</div>
     <div class="legend-item"><div class="legend-dot" style="background:#34d399"></div>Expert</div>
   </div>
-
-  <!--
-  HOW TO ADD / EDIT SKILLS:
-  Each skill row: <div class="skill-row">
-                    <span class="skill-name">Skill name</span>
-                    <div class="skill-dots" data-level="3" data-label="Familiar">
-                      <div class="dot"></div><div class="dot"></div>
-                      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-                    </div>
-                  </div>
-  Levels: 1=Beginner  2=Learning  3=Familiar  4=Active use  5=Expert
-  To add a new skill GROUP, copy any .skill-group block and change --sk-color.
-  -->
-
   <div class="skills-grid">
-
     <div class="skill-group" style="--sk-color:var(--embedded)">
       <div class="skill-group-label">Embedded &amp; Hardware</div>
-      <div class="skill-row">
-        <span class="skill-name">Embedded C</span>
-        <div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">PCB Design</span>
-        <div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">LoRaWAN</span>
-        <div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">BLE</span>
-        <div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Microcontrollers</span>
-        <div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Firmware development</span>
-        <div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Sensor integration</span>
-        <div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Embedded Linux</span>
-        <div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
+      <div class="skill-row"><span class="skill-name">Embedded C</span><div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">PCB Design</span><div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">LoRaWAN</span><div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">BLE</span><div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Microcontrollers</span><div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Firmware development</span><div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Sensor integration</span><div class="skill-dots" data-level="5" data-label="Expert"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Embedded Linux</span><div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
     </div>
-
     <div class="skill-group" style="--sk-color:var(--automation)">
       <div class="skill-group-label">Automation &amp; AI</div>
-      <div class="skill-row">
-        <span class="skill-name">Python</span>
-        <div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">n8n</span>
-        <div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">LLM integration</span>
-        <div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">GoHighLevel</span>
-        <div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">REST APIs</span>
-        <div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Telegram bots</span>
-        <div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Workflow automation</span>
-        <div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
+      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">n8n</span><div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">LLM integration</span><div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">GoHighLevel</span><div class="skill-dots" data-level="4" data-label="Active use"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">REST APIs</span><div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Telegram bots</span><div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Workflow automation</span><div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
     </div>
-
     <div class="skill-group" style="--sk-color:var(--web)">
       <div class="skill-group-label">Web &amp; Software</div>
-      <div class="skill-row">
-        <span class="skill-name">HTML / CSS</span>
-        <div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">JavaScript</span>
-        <div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Firebase</span>
-        <div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Git</span>
-        <div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">GitHub Pages</span>
-        <div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
+      <div class="skill-row"><span class="skill-name">HTML / CSS</span><div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">JavaScript</span><div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Firebase</span><div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Git</span><div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">GitHub Pages</span><div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
     </div>
-
     <div class="skill-group" style="--sk-color:var(--cyber)">
       <div class="skill-group-label">Networking &amp; Security</div>
-      <div class="skill-row">
-        <span class="skill-name">TCP / IP</span>
-        <div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Linux CLI</span>
-        <div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">CCNA</span>
-        <div class="skill-dots" data-level="1" data-label="Beginner"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
+      <div class="skill-row"><span class="skill-name">TCP / IP</span><div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Linux CLI</span><div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">CCNA</span><div class="skill-dots" data-level="1" data-label="Beginner"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
     </div>
-
     <div class="skill-group" style="--sk-color:var(--others)">
       <div class="skill-group-label">Tools &amp; Environment</div>
-      <div class="skill-row">
-        <span class="skill-name">Docker</span>
-        <div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Raspberry Pi</span>
-        <div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">MQTT</span>
-        <div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Home Assistant</span>
-        <div class="skill-dots" data-level="1" data-label="Beginner"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Grafana</span>
-        <div class="skill-dots" data-level="1" data-label="Beginner"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      </div>
+      <div class="skill-row"><span class="skill-name">Docker</span><div class="skill-dots" data-level="2" data-label="Learning"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Raspberry Pi</span><div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">MQTT</span><div class="skill-dots" data-level="3" data-label="Familiar"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Home Assistant</span><div class="skill-dots" data-level="1" data-label="Beginner"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Grafana</span><div class="skill-dots" data-level="1" data-label="Beginner"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
     </div>
-
   </div>
 
-    <!-- ── PROJECTS ──────────────────────────────────────── -->
+  <!-- PROJECTS -->
   <div class="section-label" id="projects">Projects</div>
-
-  <!-- Filter bar -->
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all" style="--fc:var(--accent)" onclick="filterProjects('all',this)">All</button>
     <button class="filter-btn" data-filter="embedded" style="--fc:var(--embedded)" onclick="filterProjects('embedded',this)">Embedded</button>
@@ -596,256 +227,123 @@ footer span{font-size:12px;color:var(--t3);letter-spacing:0.1em}
     <button class="filter-btn" data-filter="cyber" style="--fc:var(--cyber)" onclick="filterProjects('cyber',this)">Cybersecurity</button>
     <button class="filter-btn" data-filter="others" style="--fc:var(--others)" onclick="filterProjects('others',this)">Others</button>
   </div>
-
   <div class="projects-grid" id="projects-grid">
-
-    <!-- ══════════════════════════════════════════════════
-         HOW TO ADD A PROJECT:
-         1. Copy one <article> block below
-         2. Set data-cat to: embedded | automation | web | cyber | others
-         3. Set --pc to the matching category color variable
-         4. Fill in title, desc, skills, privacy reason
-         5. Set badge to: badge-public | badge-private | badge-wip
-         6. Set card-link href or leave class="card-link confidential"
-    ═══════════════════════════════════════════════════════ -->
-
-    <!-- PROJECT: Ocean monitoring (private, IP protected) -->
     <article class="project-card" data-cat="embedded" style="--pc:var(--embedded)">
-      <div class="card-top">
-        <span class="card-cat">Embedded</span>
-        <div class="card-badges">
-          <span class="badge badge-private">Private</span>
-        </div>
-      </div>
+      <div class="card-top"><span class="card-cat">Embedded</span><div class="card-badges"><span class="badge badge-private">Private</span></div></div>
       <h3 class="card-title">Ocean / saltwater monitoring system</h3>
-      <p class="card-desc">
-        Environmental monitoring system for saltwater conditions. Involves multi-parameter sensor integration, real-time data acquisition, and embedded firmware development for a marine monitoring application.
-      </p>
-      <div class="card-skills">
-        <span class="skill-tag">Embedded C</span>
-        <span class="skill-tag">PCB design</span>
-        <span class="skill-tag">Sensor integration</span>
-        <span class="skill-tag">Firmware</span>
-        <span class="skill-tag">Environmental monitoring</span>
-      </div>
+      <p class="card-desc">Environmental monitoring system for saltwater conditions. Multi-parameter sensor integration, real-time data acquisition, and embedded firmware for marine monitoring.</p>
+      <div class="card-skills"><span class="skill-tag">Embedded C</span><span class="skill-tag">PCB design</span><span class="skill-tag">Sensor integration</span><span class="skill-tag">Firmware</span></div>
       <div class="card-privacy">IP protected — details available on request</div>
-      <div class="card-footer">
-        <span class="card-status">Completed</span>
-        <span class="card-link confidential">Confidential</span>
-      </div>
+      <div class="card-footer"><span class="card-status">Completed</span><span class="card-link confidential">Confidential</span></div>
     </article>
-
-    <!-- PROJECT: LoRaWAN PCB (private, IP protected) -->
     <article class="project-card" data-cat="embedded" style="--pc:var(--embedded)">
-      <div class="card-top">
-        <span class="card-cat">Embedded</span>
-        <div class="card-badges">
-          <span class="badge badge-private">Private</span>
-        </div>
-      </div>
+      <div class="card-top"><span class="card-cat">Embedded</span><div class="card-badges"><span class="badge badge-private">Private</span></div></div>
       <h3 class="card-title">Low-power LoRaWAN PCB design</h3>
-      <p class="card-desc">
-        Custom PCB design optimized for long-range, low-power LoRaWAN communication. Focused on RF layout, power management, and miniaturization for a field-deployable IoT device.
-      </p>
-      <div class="card-skills">
-        <span class="skill-tag">PCB design</span>
-        <span class="skill-tag">LoRaWAN</span>
-        <span class="skill-tag">RF layout</span>
-        <span class="skill-tag">Low-power design</span>
-        <span class="skill-tag">IoT hardware</span>
-      </div>
+      <p class="card-desc">Custom PCB design optimized for long-range, low-power LoRaWAN communication. RF layout, power management, and miniaturization for field-deployable IoT.</p>
+      <div class="card-skills"><span class="skill-tag">PCB design</span><span class="skill-tag">LoRaWAN</span><span class="skill-tag">RF layout</span><span class="skill-tag">Low-power design</span></div>
       <div class="card-privacy">IP protected — details available on request</div>
-      <div class="card-footer">
-        <span class="card-status">Completed</span>
-        <span class="card-link confidential">Confidential</span>
-      </div>
+      <div class="card-footer"><span class="card-status">Completed</span><span class="card-link confidential">Confidential</span></div>
     </article>
-
-    <!-- PROJECT: Automation task logger (public) -->
     <article class="project-card" data-cat="automation" style="--pc:var(--automation)">
-      <div class="card-top">
-        <span class="card-cat">Automation</span>
-        <div class="card-badges">
-          <span class="badge badge-public">Public</span>
-        </div>
-      </div>
+      <div class="card-top"><span class="card-cat">Automation</span><div class="card-badges"><span class="badge badge-public">Public</span></div></div>
       <h3 class="card-title">Automation task logger</h3>
-      <p class="card-desc">
-        A Python-based task logging tool built to track and document automation project progress. Designed to support structured record-keeping for ongoing automation workflows.
-      </p>
-      <div class="card-skills">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">CLI</span>
-        <span class="skill-tag">Task tracking</span>
-        <span class="skill-tag">Automation</span>
-      </div>
-      <div class="card-footer">
-        <span class="card-status">Completed</span>
-        <a href="https://github.com/rjece/automation-task-logger" target="_blank" class="card-link">View on GitHub →</a>
-      </div>
+      <p class="card-desc">A Python-based task logging tool built to track and document automation project progress. Structured record-keeping for ongoing automation workflows.</p>
+      <div class="card-skills"><span class="skill-tag">Python</span><span class="skill-tag">CLI</span><span class="skill-tag">Task tracking</span><span class="skill-tag">Automation</span></div>
+      <div class="card-footer"><span class="card-status">Completed</span><a href="https://github.com/rjece/automation-task-logger" target="_blank" class="card-link">View on GitHub →</a></div>
     </article>
-
-    <!-- PROJECT: Personal AI automation (private, WIP) -->
     <article class="project-card" data-cat="automation" style="--pc:var(--automation)">
-      <div class="card-top">
-        <span class="card-cat">Automation</span>
-        <div class="card-badges">
-          <span class="badge badge-wip">In progress</span>
-        </div>
-      </div>
+      <div class="card-top"><span class="card-cat">Automation</span><div class="card-badges"><span class="badge badge-wip">In progress</span></div></div>
       <h3 class="card-title">Personal AI automation system</h3>
-      <p class="card-desc">
-        A personal automation stack integrating AI tools and workflow automation for daily productivity. Explores LLM integration, scheduled tasks, and intelligent data processing pipelines.
-      </p>
-      <div class="card-skills">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">AI / LLM</span>
-        <span class="skill-tag">Workflow automation</span>
-        <span class="skill-tag">API integration</span>
-      </div>
+      <p class="card-desc">Personal automation stack integrating AI tools and workflow automation for daily productivity. LLM integration, scheduled tasks, and intelligent data processing pipelines.</p>
+      <div class="card-skills"><span class="skill-tag">Python</span><span class="skill-tag">AI / LLM</span><span class="skill-tag">Workflow automation</span><span class="skill-tag">API integration</span></div>
       <div class="card-privacy">Work in progress — not yet ready for public release</div>
-      <div class="card-footer">
-        <span class="card-status">In progress</span>
-        <a href="https://github.com/rjece/personal-AI-automation" target="_blank" class="card-link">View repo →</a>
-      </div>
+      <div class="card-footer"><span class="card-status">In progress</span><a href="https://github.com/rjece/personal-AI-automation" target="_blank" class="card-link">View repo →</a></div>
     </article>
-
-    <!-- PROJECT: Finance tracker (private, personal data) -->
     <article class="project-card" data-cat="web" style="--pc:var(--web)">
-      <div class="card-top">
-        <span class="card-cat">Web</span>
-        <div class="card-badges">
-          <span class="badge badge-private">Private</span>
-          <span class="badge badge-wip">In progress</span>
-        </div>
-      </div>
+      <div class="card-top"><span class="card-cat">Web</span><div class="card-badges"><span class="badge badge-private">Private</span><span class="badge badge-wip">In progress</span></div></div>
       <h3 class="card-title">Household finance tracker</h3>
-      <p class="card-desc">
-        A web-based personal finance tracking application with a static GitHub Pages frontend and Firebase as the real-time database backend. Built for practical daily use with a focus on simplicity and privacy.
-      </p>
-      <div class="card-skills">
-        <span class="skill-tag">HTML / CSS / JS</span>
-        <span class="skill-tag">Firebase</span>
-        <span class="skill-tag">GitHub Pages</span>
-        <span class="skill-tag">Real-time DB</span>
-      </div>
+      <p class="card-desc">Web-based personal finance tracking app with GitHub Pages frontend and Firebase real-time database backend. Built for practical daily use with a focus on simplicity.</p>
+      <div class="card-skills"><span class="skill-tag">HTML / CSS / JS</span><span class="skill-tag">Firebase</span><span class="skill-tag">GitHub Pages</span><span class="skill-tag">Real-time DB</span></div>
       <div class="card-privacy">Contains personal financial data — private for security reasons</div>
-      <div class="card-footer">
-        <span class="card-status">In progress</span>
-        <span class="card-link confidential">Private repo</span>
-      </div>
+      <div class="card-footer"><span class="card-status">In progress</span><span class="card-link confidential">Private repo</span></div>
     </article>
-
-    <!-- PROJECT: Research coordinator chatbot (private, client) -->
     <article class="project-card" data-cat="web" style="--pc:var(--web)">
-      <div class="card-top">
-        <span class="card-cat">Web · Automation</span>
-        <div class="card-badges">
-          <span class="badge badge-private">Private</span>
-        </div>
-      </div>
+      <div class="card-top"><span class="card-cat">Web · Automation</span><div class="card-badges"><span class="badge badge-private">Private</span></div></div>
       <h3 class="card-title">Research coordinator chatbot</h3>
-      <p class="card-desc">
-        An AI-powered chatbot designed to assist in research coordination workflows. Integrates with LLM APIs to handle structured query-response patterns and streamline communication between research stakeholders.
-      </p>
-      <div class="card-skills">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">LLM integration</span>
-        <span class="skill-tag">Chatbot design</span>
-        <span class="skill-tag">API integration</span>
-        <span class="skill-tag">AI</span>
-      </div>
+      <p class="card-desc">AI-powered chatbot for research coordination workflows. Integrates LLM APIs to handle structured query-response patterns and streamline stakeholder communication.</p>
+      <div class="card-skills"><span class="skill-tag">Python</span><span class="skill-tag">LLM integration</span><span class="skill-tag">Chatbot design</span><span class="skill-tag">API integration</span></div>
       <div class="card-privacy">Client project — details confidential</div>
-      <div class="card-footer">
-        <span class="card-status">In progress</span>
-        <span class="card-link confidential">Confidential</span>
-      </div>
+      <div class="card-footer"><span class="card-status">In progress</span><span class="card-link confidential">Confidential</span></div>
     </article>
-
-    <!-- PROJECT: Chat booking + escrow (private, client) -->
     <article class="project-card" data-cat="web" style="--pc:var(--web)">
-      <div class="card-top">
-        <span class="card-cat">Web</span>
-        <div class="card-badges">
-          <span class="badge badge-private">Private</span>
-        </div>
-      </div>
+      <div class="card-top"><span class="card-cat">Web</span><div class="card-badges"><span class="badge badge-private">Private</span></div></div>
       <h3 class="card-title">Chat-based booking &amp; escrow platform</h3>
-      <p class="card-desc">
-        A web application combining a conversational booking interface with integrated escrow payment handling. Focuses on user trust, payment flow design, and real-time chat UX.
-      </p>
-      <div class="card-skills">
-        <span class="skill-tag">Web app</span>
-        <span class="skill-tag">Chat UI</span>
-        <span class="skill-tag">Payments integration</span>
-        <span class="skill-tag">Escrow logic</span>
-        <span class="skill-tag">JavaScript</span>
-      </div>
+      <p class="card-desc">Web app combining conversational booking with integrated escrow payment handling. User trust, payment flow design, and real-time chat UX.</p>
+      <div class="card-skills"><span class="skill-tag">Web app</span><span class="skill-tag">Chat UI</span><span class="skill-tag">Payments integration</span><span class="skill-tag">JavaScript</span></div>
       <div class="card-privacy">Client project — details confidential</div>
-      <div class="card-footer">
-        <span class="card-status">In progress</span>
-        <span class="card-link confidential">Confidential</span>
-      </div>
+      <div class="card-footer"><span class="card-status">In progress</span><span class="card-link confidential">Confidential</span></div>
     </article>
+  </div>
 
-    <!-- ══════════════════════════════════════════════════
-         TEMPLATE FOR NEW PROJECT — copy and paste below:
+  <!-- TEACHING & SPEAKING -->
+  <div class="section-label" id="teaching">Teaching &amp; Speaking</div>
 
-    <article class="project-card" data-cat="CATEGORY" style="--pc:var(--CATEGORY)">
-      <div class="card-top">
-        <span class="card-cat">Category label</span>
-        <div class="card-badges">
-          <span class="badge badge-private">Private</span>
-        </div>
-      </div>
-      <h3 class="card-title">Project title</h3>
-      <p class="card-desc">
-        Short description of what it does and why it exists.
-      </p>
-      <div class="card-skills">
-        <span class="skill-tag">Skill 1</span>
-        <span class="skill-tag">Skill 2</span>
-      </div>
-      <div class="card-privacy">Reason it is private</div>
-      <div class="card-footer">
-        <span class="card-status">Status</span>
-        <a href="REPO_URL" target="_blank" class="card-link">View on GitHub →</a>
-      </div>
-    </article>
+  <div class="sub-label">
+    <span style="color:var(--embedded)">▶</span>
+    Lecture &amp; Tutorial Videos
+    <span class="sub-label-line"></span>
+  </div>
+  <div class="teaching-grid">
+    <a class="card-wrap" href="https://youtu.be/H_w-tL5WiTo" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 1</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/QoDWpDt3M9A" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 2</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/rN4dKPjacHU" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 3</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/_hIW9QLdRU0" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 4</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/eeC5Y-xyf1o" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 5</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/VZrmw1cBtmg" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 6</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/qs18L8IqhSs" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 7</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/pvI5WEtF2lQ" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 8</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/aHVPiJLqFuU" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 9</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/-5Fx3lAMgj4" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 10</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://youtu.be/-cFq_M35N4M" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 11</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://www.youtube.com/watch?v=z2REZl-2df4" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Tutorial Video 12</h3><p class="card-desc">Electronics engineering lecture or tutorial recording. Update this title with the actual topic.</p><div class="card-footer"><span class="card-status">YouTube</span><span class="card-link">Watch →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/r/18V8MZhxMc/" target="_blank"><div class="project-card" style="--pc:var(--embedded)"><div class="card-top"><span class="card-cat">Video · Tutorial</span></div><h3 class="card-title">Sample Teaching / Tutorial Content</h3><p class="card-desc">Sample teaching or tutorial content demonstrating instructional delivery style and electronics concept explanation.</p><div class="card-footer"><span class="card-status">Facebook</span><span class="card-link">Watch →</span></div></div></a>
+  </div>
 
-    ═══════════════════════════════════════════════════════ -->
+  <div class="sub-label">
+    <span style="color:var(--automation)">◈</span>
+    Speaking &amp; Training Engagements
+    <span class="sub-label-line"></span>
+  </div>
+  <div class="teaching-grid" style="margin-bottom:48px;">
+    <a class="card-wrap" href="https://www.facebook.com/share/1CxUSxzcR6/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Keynote · Speaking</span></div><h3 class="card-title">Arduino Day 2026 Mindanao</h3><p class="card-desc">Closing keynote at Arduino Day 2026 Mindanao (USeP). Topic: BLE Fundamentals & Applications. Organized by CreateLabz & AGILab with DOST, DICT, and DepEd support.</p><div class="card-skills"><span class="skill-tag">BLE</span><span class="skill-tag">Keynote</span><span class="skill-tag">Embedded systems</span></div><div class="card-footer"><span class="card-status">Mar 25, 2026</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/photo?fbid=1409802404499574&set=gm.2011643936898993&idorvanity=1999528258110561" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Keynote · Speaking</span></div><h3 class="card-title">Arduino Day 2026 — Event Photos</h3><p class="card-desc">Photos from Arduino Day 2026 Mindanao. Delivered the closing keynote on BLE fundamentals and practical embedded systems applications.</p><div class="card-skills"><span class="skill-tag">BLE</span><span class="skill-tag">Arduino</span><span class="skill-tag">Mindanao</span></div><div class="card-footer"><span class="card-status">Mar 25, 2026</span><span class="card-link">View photos →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/1CNiR8QEoR/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · IoT</span></div><h3 class="card-title">2-Day IoT Training — ASSCAT</h3><p class="card-desc">2-day hands-on IoT training for Computer and Electronics Engineers from Agusan del Sur State College of Agriculture and Technology. Covered RS485-Modbus, LoRaWAN, and dashboard development.</p><div class="card-skills"><span class="skill-tag">LoRaWAN</span><span class="skill-tag">RS485-Modbus</span><span class="skill-tag">Agriculture IoT</span></div><div class="card-footer"><span class="card-status">Jul 2025</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/1GwDADSimp/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · IoT</span></div><h3 class="card-title">IoT Learning Lab — BUGSAI TBI</h3><p class="card-desc">Co-facilitated a comprehensive IoT session for 30 student-incubatees under DOST-DNSC BUGSAI TBI. Covered intelligent systems for monitoring, automation, and efficiency.</p><div class="card-skills"><span class="skill-tag">IoT</span><span class="skill-tag">DOST</span><span class="skill-tag">Incubation</span></div><div class="card-footer"><span class="card-status">Jul 30, 2025</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/1KtFP59PTv/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Workshop · PCB Fabrication</span></div><h3 class="card-title">CNC Laser PCB Etching — AdDU</h3><p class="card-desc">Resource speaker for the Computer Engineering student org of Ateneo de Davao University. Guided students through CNC laser machine operation for PCB etching.</p><div class="card-skills"><span class="skill-tag">CNC Laser</span><span class="skill-tag">PCB etching</span><span class="skill-tag">AdDU</span></div><div class="card-footer"><span class="card-status">Aug 13, 2025</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/r/1AtTzz4yeu/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · Robotics</span></div><h3 class="card-title">Robotics Training — Elementary Teachers</h3><p class="card-desc">mBot robotics training for elementary teachers of Talomo Central Elementary School in collaboration with DepEd Davao and AFFLIP. Teachers learned to assemble, code, and operate robots.</p><div class="card-skills"><span class="skill-tag">Robotics</span><span class="skill-tag">mBot</span><span class="skill-tag">DepEd</span><span class="skill-tag">AFFLIP</span></div><div class="card-footer"><span class="card-status">Oct 1, 2025</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/1CP6d7j9nR/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · Digital Fabrication</span></div><h3 class="card-title">3D Printing Training — DOST</h3><p class="card-desc">Hands-on 3D printing training under CreateLabz's tech partnership with DOST. Covered machine setup, slicing software, and rapid prototyping applications.</p><div class="card-skills"><span class="skill-tag">3D Printing</span><span class="skill-tag">DOST</span><span class="skill-tag">Digital fabrication</span></div><div class="card-footer"><span class="card-status">Nov 2025</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/1CfuPLjKhp/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · IoT</span></div><h3 class="card-title">Small Group IoT Training — OJTs</h3><p class="card-desc">Hands-on small group training for OJT engineers at CreateLabz. Practical IoT concepts, sensor integration, and real project tasks to get trainees up to speed fast.</p><div class="card-skills"><span class="skill-tag">IoT</span><span class="skill-tag">Mentoring</span><span class="skill-tag">CreateLabz</span></div><div class="card-footer"><span class="card-status">Ongoing</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/r/1CAjz51AhU/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · Robotics</span></div><h3 class="card-title">Robotics Training — Stockbridge International School</h3><p class="card-desc">Robotics training for Stockbridge International School in Davao. Hands-on session equipping students with practical robotics and STEM skills.</p><div class="card-skills"><span class="skill-tag">Robotics</span><span class="skill-tag">STEM</span><span class="skill-tag">Davao</span></div><div class="card-footer"><span class="card-status">Training</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/18dtKdPkAK/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · Robotics</span></div><h3 class="card-title">Robotics Training — Precious International School</h3><p class="card-desc">Robotics training for teachers at Precious International School in Davao. Equipping educators with hands-on robotics skills to cascade STEM learning to their students.</p><div class="card-skills"><span class="skill-tag">Robotics</span><span class="skill-tag">STEM</span><span class="skill-tag">Teacher training</span></div><div class="card-footer"><span class="card-status">Training</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/1DZUdH9MHm/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · Robotics</span></div><h3 class="card-title">HCR &amp; MyCobot Robotics Platform Training</h3><p class="card-desc">Hands-on training on HCR and MyCobot robotics platforms. Robot operation, programming fundamentals, and practical applications in automation and advanced robotics.</p><div class="card-skills"><span class="skill-tag">HCR</span><span class="skill-tag">MyCobot</span><span class="skill-tag">Robotics</span><span class="skill-tag">Automation</span></div><div class="card-footer"><span class="card-status">Training</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/1YwFtHq84G/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Training · IoT &amp; Embedded</span></div><h3 class="card-title">Senior High &amp; Select Students — St. Peter's College of Toril</h3><p class="card-desc">Training for Senior High School teachers and select students from St. Peter's College of Toril. Bridging electronics theory with practical embedded systems and IoT applications.</p><div class="card-skills"><span class="skill-tag">IoT</span><span class="skill-tag">Embedded systems</span><span class="skill-tag">Senior High</span><span class="skill-tag">Toril</span></div><div class="card-footer"><span class="card-status">Training</span><span class="card-link">View post →</span></div></div></a>
+    <a class="card-wrap" href="https://www.facebook.com/share/p/14fk5WRPT81/" target="_blank"><div class="project-card" style="--pc:var(--automation)"><div class="card-top"><span class="card-cat">Judging · Science &amp; Technology</span></div><h3 class="card-title">Judge — Regional Science Fair 2024</h3><p class="card-desc">Served as judge for the 2024 Regional Science and Technology Fair, Region XI, organized by DepEd. Evaluated student research projects and innovations in science, technology, and engineering.</p><div class="card-skills"><span class="skill-tag">DepEd Region XI</span><span class="skill-tag">Science Fair</span><span class="skill-tag">STEM</span></div><div class="card-footer"><span class="card-status">2024</span><span class="card-link">View post →</span></div></div></a>
+  </div>
 
-  </div><!-- /projects-grid -->
-
-  <!-- ── ABOUT ────────────────────────────────────────── -->
+  <!-- ABOUT -->
   <div class="section-label" id="about">About</div>
   <div class="about-block">
     <h3>Electronics Engineer building at the hardware-software boundary</h3>
-    <!-- UPDATE: Edit this section to match your voice and story -->
-    <p>
-      I'm an Electronics Engineer based in Davao, Philippines, with hands-on experience in
-      embedded systems, IoT hardware design, and firmware development. My background spans
-      <strong>PCB design, BLE, LoRaWAN, and microcontroller programming</strong> — the kind of low-level
-      work that most software engineers never touch.
-    </p>
-    <p>
-      I'm currently expanding into <strong>software automation, AI-powered workflows, and network security</strong> —
-      building toward a fully remote role in systems engineering. I build things that cross the boundary
-      between physical hardware and connected software: from sensor nodes in the field to cloud dashboards
-      tracking them in real time.
-    </p>
-    <p>
-      Outside of engineering, I'm developing a smart hydroponics farm and a long-term farm-to-table café
-      project — both powered by the same embedded + automation skills I use professionally.
-    </p>
+    <p>I'm an Electronics Engineer based in Davao, Philippines, with hands-on experience in embedded systems, IoT hardware design, and firmware development. My background spans <strong>PCB design, BLE, LoRaWAN, and microcontroller programming</strong> — the kind of low-level work that most software engineers never touch.</p>
+    <p>I'm currently expanding into <strong>software automation, AI-powered workflows, and network security</strong> — building toward a fully remote role in systems engineering. I build things that cross the boundary between physical hardware and connected software: from sensor nodes in the field to cloud dashboards tracking them in real time.</p>
+    <p>Outside of engineering, I'm developing a smart hydroponics farm and a long-term farm-to-table café project — both powered by the same embedded + automation skills I use professionally.</p>
   </div>
 
-  <!-- ── CONTACT ───────────────────────────────────────── -->
+  <!-- CONTACT -->
   <div class="section-label" id="contact">Contact</div>
   <div class="contact-strip">
     <div class="contact-left">
       <h3>Let's work together</h3>
-      <!-- UPDATE: Change availability status as needed -->
       <p>Open to remote roles, freelance projects, and collaborations.</p>
     </div>
     <div class="contact-links">
@@ -859,22 +357,17 @@ footer span{font-size:12px;color:var(--t3);letter-spacing:0.1em}
     <span>RJ &mdash; Electronics Engineer</span>
     <span>rjece.github.io</span>
   </footer>
-
-</div><!-- /wrap -->
+</div>
 
 <script>
 function filterProjects(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.project-card').forEach(card => {
-    if (cat === 'all' || card.dataset.cat === cat) {
-      card.classList.remove('hidden');
-    } else {
-      card.classList.add('hidden');
-    }
+    if (cat === 'all' || card.dataset.cat === cat) card.classList.remove('hidden');
+    else card.classList.add('hidden');
   });
 }
 </script>
-
 </body>
 </html>
